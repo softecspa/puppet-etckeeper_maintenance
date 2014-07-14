@@ -61,6 +61,11 @@ class etckeeper_maintenance (
   include git
   include etckeeper
 
+  require git
+  require etckeeper
+
+  git::config_usermail {'config_usermail': }
+
   if ! is_integer($max_dimension) {
     fail('variable max_dimension must have an integer value (MB)')
   }
